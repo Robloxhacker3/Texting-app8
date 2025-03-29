@@ -7,28 +7,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="auth-container">
-        <h2>Login</h2>
+    <div id="auth">
+        <h2>Login / Signup</h2>
         <input type="text" id="username" placeholder="Username">
-        <input type="password" id="password" placeholder="Password">
-        <button onclick="login()">Login</button>
         <button onclick="signup()">Signup</button>
+        <button onclick="login()">Login</button>
     </div>
 
-    <div id="chat-container" style="display: none;">
-        <h3>Friends</h3>
-        <div id="friends-list"></div>
-        <input type="text" id="friend-username" placeholder="Add friend by username">
+    <div id="chat" style="display: none;">
+        <h2>Friends</h2>
+        <input type="text" id="friendUsername" placeholder="Add friend">
         <button onclick="addFriend()">Add Friend</button>
-        <div id="friend-requests"></div>
+        <div id="friendRequests"></div>
+        <div id="friendsList"></div>
 
-        <h3>Chat</h3>
-        <div id="messages"></div>
-        <input type="text" id="message-input" placeholder="Type a message">
+        <h2>Chat</h2>
+        <div id="chatWindow"></div>
+        <p id="typingIndicator" style="display: none;">Typing...</p>
+        <input type="text" id="messageInput" placeholder="Type a message" oninput="showTyping()">
         <button onclick="sendMessage()">Send</button>
         <button onclick="logout()">Logout</button>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
